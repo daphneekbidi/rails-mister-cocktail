@@ -1,0 +1,11 @@
+<h1>Cocktails</h1>
+
+
+<% @cocktails.each do |cocktail| %>
+<%= render 'cocktails/components/cards', cocktail: cocktail %>
+<p><%= cocktail.name %></p>
+   <%= button_to 'Delete', cocktail_path(cocktail),
+    method: :delete,
+    data: { confirm: 'Are you sure' } %>
+<% end %>
+
